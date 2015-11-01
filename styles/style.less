@@ -1,0 +1,71 @@
+// @import url()
+@import url(./material-color.less);
+.car{
+	// fill: @clr-pink-500;
+	stroke: none;
+}
+
+svg#vis{
+	// width: 450px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.car{
+	rx: .2px;
+	ry: .2px;
+}
+
+.road{
+	fill: none;
+	stroke-width: 5px;
+	stroke: @clr-grey-200;
+}
+
+.label{
+	font-size: 3px;
+}
+
+.signal{
+	fill: @clr-red-500;
+}
+
+.signal.green{
+	fill: @clr-green-500;
+}
+
+#main > div{
+	padding: 10px;
+}
+
+circle.memory{
+	fill: @clr-light-blue-500;
+	stroke: white;
+	stroke-width: .2px;
+	opacity: .5;
+}
+
+path.mfd{
+	fill: none;
+	stroke: @clr-pink-500;
+}
+
+.en{
+	fill: none;
+	stroke:@clr-pink-500;
+}
+
+.ex{
+	fill: none;
+	stroke: @clr-light-blue-500;
+}
+
+.bg{
+	fill: @clr-grey-200;
+	opacity: .3;
+}

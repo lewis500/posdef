@@ -1,0 +1,52 @@
+.car {
+  stroke: none;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.car {
+  rx: .2px;
+  ry: .2px;
+}
+.road {
+  fill: none;
+  stroke-width: 5px;
+  stroke: #eeeeee;
+}
+.label {
+  font-size: 3px;
+}
+.signal {
+  fill: #f44336;
+}
+.signal.green {
+  fill: #4caf50;
+}
+#main > div {
+  padding: 10px;
+}
+circle.memory {
+  fill: #03a9f4;
+  stroke: white;
+  stroke-width: .2px;
+  opacity: .5;
+}
+path.mfd {
+  fill: none;
+  stroke: #e91e63;
+}
+.en {
+  fill: none;
+  stroke: #e91e63;
+}
+.ex {
+  fill: none;
+  stroke: #03a9f4;
+}
+.bg {
+  fill: #eeeeee;
+  opacity: .3;
+}
