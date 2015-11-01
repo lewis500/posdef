@@ -1,6 +1,7 @@
 #make the store
+React = require 'react'
 {createStore} = require 'redux'
-root = require '../reducers/root'
+root = require './reducers/root'
 store = createStore root
 
 #rig up the app

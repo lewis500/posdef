@@ -6,6 +6,7 @@ ActionCreators = require '../actions/actionCreators'
 
 App = React.createClass
 	render: ->
+    (<div></div>)
 
 mapStateToProps = (state)->
 	assign {}, state
