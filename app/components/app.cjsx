@@ -3,10 +3,12 @@ React = require 'react'
 {connect} = require 'react-redux'
 {bindActionCreators} = require 'redux'
 ActionCreators = require '../actions/actionCreators'
+Matrix = require './matrix'
 
 App = React.createClass
 	render: ->
-    (<div></div>)
+		<Matrix setEntries={this.props.actions.setEntries} />
+    # (<div></div>)
 
 mapStateToProps = (state)->
 	assign {}, state
