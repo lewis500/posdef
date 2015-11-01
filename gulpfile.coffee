@@ -15,7 +15,7 @@ errorHandler = (e)->
 
 gulp.task 'thirdParty', ->
 	opts = 
-		require: ['lodash','d3','react','react-addons-pure-render-mixin', 'react-dom','flux', 'events','immutable','classNames','react-redux','redux']
+		require: ['lodash','d3','react','react-dom','flux', 'events','immutable','classNames','react-redux','redux']
 
 	browserify opts
 		.bundle()

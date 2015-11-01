@@ -1,6 +1,5 @@
 React = require 'react'
 {assign} = require 'lodash'
-PureRenderMixin = require 'react-addons-pure-render-mixin'
 {connect} = require 'react-redux'
 {bindActionCreators} = require 'redux'
 ActionCreators = require '../actions/actionCreators'
