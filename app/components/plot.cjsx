@@ -60,7 +60,6 @@ Plot = React.createClass
 
 	render: ->
 		entries = this.props.entries
-		console.log entries
 		<div ref='plot' id='plot'></div>
 
 module.exports = Plot

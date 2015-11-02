@@ -1,6 +1,5 @@
 #add enjalot's matrix thing
 require './d3-matrix.js'
-
 #make the store
 React = require 'react'
 {createStore} = require 'redux'

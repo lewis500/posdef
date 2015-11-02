@@ -49,7 +49,7 @@ gulp.task 'watch', ->
 	opts = 
 			bundleExternal: false
 			transform: [coffee_reactify]
-			extensions: ['.coffee', '.cjsx']
+			extensions: ['.coffee', '.cjsx','.js']
 			debug: true
 			
 	bundler = browserify './app/index.cjsx',opts

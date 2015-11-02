@@ -5,12 +5,40 @@
     <title>Positive Definite Matrices</title>
     <link rel="stylesheet" href="styles/flex.css">
     <link rel="stylesheet" href="styles/style.css">
-    <!-- <link rel='stylesheet' src='bower_components/mathbox/build/mathbox.css'></link> -->
-    <script type="text/javascript" src='bower_components/mathbox/build/mathbox-bundle.min.js'></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+    <script src='app/mathbox.js'></script>
 </head>
 
 <body>
     <div id='app'></div>
+    <!-- my personal blog uses MathJax for maths typesetting. Add that in: -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ displayAlign: "left", displayIndent: "2em", TeX: { extensions: ["color.js"] } });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.3/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script>
+    /**
+     * You can also turn this into a Mixin by removing the "process:" level,
+     * but I need it as external processor, rather than a file that can be
+     * packed into a final concatenated, minified JS package in this case.
+     */
+    var MathJaxProcessor = {
+        process: function(element) {
+            // markdown turns ` into <code>, which we need to strip out again
+            var needsMathJax = false;
+            var codes = Array.prototype.slice.call(element.querySelectorAll("code"));
+            codes.forEach(function(codeElement) {
+                var s = codeElement.innerHTML;
+                if (s.match(/^\\+\[/) && s.match(/\\+\]$/)) {
+                    codeElement.outerHTML = s.replace(/\\\\/g, "\\");
+                    needsMathJax = true;
+                }
+            });
+            if (needsMathJax) MathJax.Hub.Queue(["Typeset", MathJax.Hub, element]);
+        }
+    };
+    </script>
     <script type="text/javascript" src='build/thirdParty.js'></script>
     <script type="text/javascript" src='build/bundle.js'></script>
 </body>

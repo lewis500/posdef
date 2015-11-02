@@ -2,7 +2,7 @@
 React = require 'react'
 Matrix = require './matrix'
 Plot = require './plot'
-
+Equation = require './equation'
 App = React.createClass
 	render: ->
 		<div>
@@ -12,6 +12,7 @@ App = React.createClass
 
 #WIRE THINGS UP FORE REDUX
 {assign} = require 'lodash'
+			# <Equation entries={this.props.entries}/>
 {connect} = require 'react-redux'
 {bindActionCreators} = require 'redux'
 ActionCreators = require '../actions/actionCreators'
