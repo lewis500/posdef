@@ -9,9 +9,10 @@ initialState =
 	entries: [[1,0],[0,1]]
 
 RootReduce = (state=initialState, action)->
+	{entries} = state
 	switch action.type
 		when types.SET_ENTRIES
-			state.entries = action.entries
-	state
+			entries = action.entries
+	{entries}
 
 module.exports = RootReduce
