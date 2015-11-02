@@ -50,16 +50,34 @@ Plot = React.createClass
 				emit x,y,z
 			channels:3
 
+		area.shader({ code: "#plot-vertex-xyz" })
+    .vertex({ pass: 'data' })
+    .shader({ code: "#plot-fragment-shader" })
+		.fragment({gamma: true })
+    .surface({
+      fill: true,
+      lineX: false,
+      lineY: false,
+      width: 1,
+      zBias: 1,
+    })
+
 		area.surface
-			shaded: true
-			lineX: true
-			lineY: true
-			color: "#51e4ff"
-			width: 0.5
-			opacity: 1
+      fill: false
+      lineX: true
+      lineY: true
+      width: 1.5
+      zBias: 1
+      color: "#c6cfd1"
+      width: 0.5
+      opacity: 1
 
 	render: ->
 		entries = this.props.entries
-		<div ref='plot' id='plot'></div>
+		return (
+			<div>
+				<div ref='plot' id='plot'></div>
+			</div>
+			)
 
 module.exports = Plot

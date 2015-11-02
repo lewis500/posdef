@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
     <script src='app/mathbox.js'></script>
+
+    <!-- TODO: figure out how to include these near the component -->
+    <script type="application/glsl" id="plot-vertex-xyz">
+      #define POSITION_STPQ
+      void getPosition(inout vec4 xyzw, inout vec4 stpq) {
+        stpq = xyzw;
+      }
+    </script>
+    <script type="application/glsl" id="plot-fragment-shader">
+      #define POSITION_STPQ
+        vec4 getColor(vec4 rgba, inout vec4 stpq) {
+          float z = stpq.z/3.0;
+          if(z < 0.0) {   
+            return vec4(0.4, 0, 0, 0.9);
+          }
+          return vec4(0.0, 0.4*z - 0.6, (0.4/z + 0.4), 0.9);
+      }
+    </script>
 </head>
 
 <body>
@@ -41,6 +59,8 @@
     </script>
     <script type="text/javascript" src='build/thirdParty.js'></script>
     <script type="text/javascript" src='build/bundle.js'></script>
+
+    
 </body>
 
 </html>
